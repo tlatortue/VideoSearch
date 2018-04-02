@@ -1,7 +1,13 @@
+// Namespace imports
 import React, { Component } from 'react';
-import SearchBar from './components/search_bar';
 import YTSearch from 'youtube-api-search';
 
+// Created component imports
+import SearchBar from './components/search_bar';
+import VideoList from './components/video_list';
+import VideoDetail from './components/video_detail';
+
+// UI Design imports
 import logo from './logo.svg';
 import './App.css';
 
@@ -16,7 +22,7 @@ class App extends Component {
       selectedVideo : null
     };
 
-    this.videoSearch('surfboards');
+    this.videoSearch('cryptocurrency');
   }
 
   videoSearch(term) {
@@ -38,7 +44,10 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        < SearchBar />
+        <SearchBar />
+        <VideoList
+          videos = {this.state.videos}
+        />
       </div>
     );
   }
