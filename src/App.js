@@ -45,6 +45,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <SearchBar />
+        <VideoDetail video={this.state.selectedVideo} />
         <VideoList
           videos = {this.state.videos}
         />
